@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery Mobile Popup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- REQUIRED: jQuery Mobile CSS -->
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css" />
+</head>
+
+<style>
+	:root {
+		--accent: #fff;
+		/* pastel pink */
+		--bg: linear-gradient(to bottom, #174ce8, #174ce8, #031864);
+
+
+		--headbg: #003bd0;
+		/* soft pink-white */
+		--text: #fff;
+		/* soft dark gray */
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		color: var(--text);
+	}
+
+	.head {
+		background: var(--headbg) !important;
+	}
+
+	.ui-page {
+		background: var(--bg);
+	}
+
+	.ui-header,
+	.ui-footer {
+		background: var(--headbg) !important;
+		border: none;
+		box-shadow: none;
+	}
+
+	.ui-header h1,
+	.ui-footer h4 {
+		color: var(--accent);
+		font-weight: 600;
+		letter-spacing: 0.4px;
+	}
+
+	.ui-btn.ui-icon-back {
+		color: var(--accent);
+	}
+
+	.ui-content h2 {
+		font-weight: 500;
+		margin-bottom: 1.5em;
+		color: var(--text);
+
+	}
+
+	/* Gallery */
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+
+	.gallery img {
+		width: 100%;
+		border-radius: 14px;
+		border: 2px solid transparent;
+		transition: transform 0.15s ease, border 0.15s ease;
+	}
+
+	.gallery img:active {
+		transform: scale(0.97);
+		border-color: var(--accent);
+	}
+
+	/* Popup */
+	.ui-popup {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+	.popphoto {
+		border-radius: 18px;
+		border: 4px solid var(--accent);
+	}
+
+	.ui-icon-delete {
+		background-color: var(--accent);
+		border-radius: 50%;
+	}
+</style>
+
+
+
+
+<body>
+
+	<div data-role="page">
+
+		<div data-role="header" data-position="fixed" class="head">
+			<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-left">Back</a>
+			<h1>JQM Popup</h1>
+		</div>
+
+		<div role="main" class="ui-content">
+			<h2>Popup Image</h2>
+
+			<a href="#popupbarney" data-rel="popup" data-position-to="window" data-transition="fade">
+				<img src="images/barney.jpg" height="100" width="100" alt="Barney">
+			</a>
+			<div data-role="popup" id="popupbarney" data-overlay-theme="b" data-corners="false">
+				<a href="#" data-rel="back"
+					class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+				<img class="popphoto" src="images/barney.jpg" style="max-height:512px" alt="Barney">
+			</div>
+
+			<a href="#popupcocomelon" data-rel="popup" data-position-to="window" data-transition="fade">
+				<img src="images/cocomelon.jpg" height="100" width="100" alt="Coco Melon">
+			</a>
+			<div data-role="popup" id="popupcocomelon" data-overlay-theme="b" data-corners="false">
+				<a href="#" data-rel="back"
+					class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+				<img class="popphoto" src="images/cocomelon.jpg" style="max-height:512px" alt="Coco Melon">
+			</div>
+
+			<a href="#popuphellokitty" data-rel="popup" data-position-to="window" data-transition="fade">
+				<img src="images/hellokitty.jpeg" height="100" width="100" alt="Hello Kitty">
+			</a>
+			<div data-role="popup" id="popuphellokitty" data-overlay-theme="b" data-corners="false">
+				<a href="#" data-rel="back"
+					class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+				<img class="popphoto" src="images/hellokitty.jpeg" style="max-height:512px" alt="Hello Kitty">
+			</div>
+
+			<a href="#popupmickymouse" data-rel="popup" data-position-to="window" data-transition="fade">
+				<img src="images/mickymouse.jpg" height="100" width="100" alt="Micky Mouse">
+			</a>
+			<div data-role="popup" id="popupmickymouse" data-overlay-theme="b" data-corners="false">
+				<a href="#" data-rel="back"
+					class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+				<img class="popphoto" src="images/mickymouse.jpg" style="max-height:512px" alt="Micky Mouse">
+			</div>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h4>Mobile Application Development</h4>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/custom.js"></script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="cordova.js"></script> -->
+
+</body>
+
+</html>
